@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int maxMessages = 25;
 
     public GameObject chatPanel, textObject;
+    public InputField chatBox;
 
     [SerializeField]
     List<Message> messageList = new List<Message>();
@@ -19,9 +20,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SendManagerToChat("You pressed the space key!");
-        Debug.Log("Space");
+        if(chatBox.text != "")
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SendManagerToChat(chatBox.text);
+                chatBox.text = "";
+            }
+        }
+
+        if (!chatBox.isFocused)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                SendManagerToChat("You pressed the space key!");
+            Debug.Log("Space");
+        }
+
     }
 
     public void SendManagerToChat(string text) 
