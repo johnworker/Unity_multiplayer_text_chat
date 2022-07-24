@@ -6,6 +6,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("使用者名稱")]
+    [Tooltip("請輸入使用者名稱")]
     public string username;
     public int maxMessages = 25;
 
@@ -42,26 +44,21 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 SendManagerToChat("You pressed the space bar!", Message.MessageType.info);
-            Debug.Log("Space");
+            Debug.Log("Enter to send your message");
         }
 
     }
 
     public void SendManagerToChat(string text, Message.MessageType messageType) 
     {
-        if (messageList.Count >= maxMessages)
-            Destroy(messageList[0].textObject.gameObject);
-        {
-            messageList.Remove(messageList[0]);
-        }
-
+        
         Message newMassage = new Message();
 
         newMassage.text = text;
 
         GameObject newText = Instantiate(textObject, chatPanel.transform);
 
-        newMassage.textObject = newText.GetComponent<Text>();
+        newMassage.textObject = newText.GetComponent<TextMeshProUGUI>();
 
         newMassage.textObject.text = newMassage.text;
         newMassage.textObject.color = MessageTypeColor(messageType);
@@ -90,7 +87,7 @@ public class GameManager : MonoBehaviour
 public class Message
 {
     public string text;
-    public Text textObject;
+    public TextMeshProUGUI textObject;
     public MessageType messageType;
 
     public enum MessageType
