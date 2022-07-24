@@ -7,7 +7,7 @@ using TMPro;
 public class ControlChatRoom : MonoBehaviour
 {
 
-    public InputField chatInput;
+    public TMP_InputField chatInput;
     public TextMeshProUGUI chatText;
     public ScrollRect scrollRect;
     string username = "DHX";

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
         if (!chatBox.isFocused)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 SendManagerToChat("You pressed the space bar!", Message.MessageType.info);
             Debug.Log("Space");
         }
