@@ -1793,10 +1793,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6127cd27699667743bd7ab1e59ad63e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: Supertrooper
   maxMessages: 25
   chatPanel: {fileID: 1580320215}
   textObject: {fileID: 5648717845941814292, guid: 7b81140ecd0a4474bb5aa1d40fc181d9, type: 3}
   chatBox: {fileID: 1653541797}
-  playerMessage: {r: 0, g: 0, b: 0, a: 1}
-  info: {r: 0, g: 0, b: 0, a: 1}
+  playerMessage: {r: 1, g: 1, b: 1, a: 1}
+  info: {r: 0.514151, g: 0.69434595, b: 1, a: 1}
   messageList: []

@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public string username;
     public int maxMessages = 25;
 
     public GameObject chatPanel, textObject;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                SendManagerToChat(chatBox.text, Message.MessageType.playerMessage);
+                SendManagerToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                 chatBox.text = "";
             }
         }
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
         if (!chatBox.isFocused)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                SendManagerToChat("You pressed the space key!", Message.MessageType.info);
+                SendManagerToChat("You pressed the space bar!", Message.MessageType.info);
             Debug.Log("Space");
         }
 
