@@ -1794,4 +1794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMessages: 25
+  chatPanel: {fileID: 1580320215}
+  textObject: {fileID: 5648717845941814292, guid: 7b81140ecd0a4474bb5aa1d40fc181d9, type: 3}
   messageList: []
