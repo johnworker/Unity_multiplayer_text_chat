@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public int maxMessages = 25;
+
     [SerializeField]
     List<Message> messageList = new List<Message>();
     void Start()
@@ -20,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     public void SendManagerToChat(string text) 
     {
+        if (messageList.Count >= maxMessages)
+            messageList.Remove(messageList[0]);
+
         Message newMassage = new Message();
 
         newMassage.text = text;
