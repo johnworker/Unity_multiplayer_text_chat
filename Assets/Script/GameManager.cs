@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int maxMessages = 25;
 
     public GameObject chatPanel, textObject;
-    public InputField chatBox;
+    public TMP_InputField chatBox;
 
     public Color playerMessage, info;
 
@@ -63,8 +63,25 @@ public class GameManager : MonoBehaviour
         newMassage.textObject = newText.GetComponent<Text>();
 
         newMassage.textObject.text = newMassage.text;
+        newMassage.textObject.color = MessageTypeColor(messageType);
 
         messageList.Add(newMassage);
+    }
+
+    Color MessageTypeColor(Message.MessageType messageType)
+    {
+        Color color = info;
+
+        switch (messageType)
+        {
+            case Message.MessageType.playerMessage:
+                color = playerMessage;
+                break;
+
+
+        }
+
+        return color;
     }
 }
 

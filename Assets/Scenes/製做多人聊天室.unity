@@ -1796,7 +1796,7 @@ MonoBehaviour:
   maxMessages: 25
   chatPanel: {fileID: 1580320215}
   textObject: {fileID: 5648717845941814292, guid: 7b81140ecd0a4474bb5aa1d40fc181d9, type: 3}
-  chatBox: {fileID: 0}
+  chatBox: {fileID: 1653541797}
   playerMessage: {r: 0, g: 0, b: 0, a: 1}
   info: {r: 0, g: 0, b: 0, a: 1}
   messageList: []
