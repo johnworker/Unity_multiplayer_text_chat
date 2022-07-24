@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -26,11 +27,20 @@ public class GameManager : MonoBehaviour
     public void SendManagerToChat(string text) 
     {
         if (messageList.Count >= maxMessages)
+        {
+            Destroy(messageList[0].textObject.gameObject);
             messageList.Remove(messageList[0]);
+        }
 
         Message newMassage = new Message();
 
         newMassage.text = text;
+
+        GameObject newText = Instantiate(textObject, chatPanel.transform);
+
+        newMassage.textObject = newText.GetComponent<Text>();
+
+        newMassage.textObject.text = newMassage.text;
 
         messageList.Add(newMassage);
     }
@@ -40,4 +50,5 @@ public class GameManager : MonoBehaviour
 public class Message
 {
     public string text;
+    public Text textObject;
 }
