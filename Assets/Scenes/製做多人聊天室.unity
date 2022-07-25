@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   username: Supertrooper
-  maxMessages: 25
+  maxMessages: 15
   chatPanel: {fileID: 1580320215}
   textObject: {fileID: 1163406549}
   chatBox: {fileID: 1653541797}
