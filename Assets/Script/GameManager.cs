@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
     [Header("使用者名稱")]
     [Tooltip("請輸入使用者名稱")]
     public string username;
+
+    [Header("訊息最大上限")]
+    [Tooltip("此來是為未來需求先預設，目前無功能添加")]
     public int maxMessages = 25;
 
     public GameObject chatPanel, textObject;
+    [Header("文字輸入框欄位")]
     public TMP_InputField chatBox;
 
     public Color playerMessage, info;
